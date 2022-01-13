@@ -6,11 +6,9 @@ let userCheck = false;
 
 socket.on('update_messages', (messages) => {
 
-    
     updateMessages(messages);
+
 })
-
-
 
 function updateMessages(data){
     let div_message = document.querySelector('#messages');
@@ -25,16 +23,12 @@ function updateMessages(data){
     });
 
     if(div_message.childElementCount > 0){
-        div_message.children[0].classList.add('first-container');
-    }
-    
+        div_message.children[0].classList.add('first-container-top');
+    }   
 }
-
-
 
 function composeMsg(data){
 
-    
     let msgContainer = document.createElement('ul');
     let msgValue = document.createElement('li');
     let msgUser = document.createElement('li');
@@ -43,7 +37,13 @@ function composeMsg(data){
 
     if(data.user == user) {
 
-        msgContainer.classList.add('own-msg');
+        
+        if(!userCheck){
+            msgContainer.classList.add('first-container');
+            userCheck = true;
+        }
+
+        msgContainer.classList.add('right-msg');
 
         msgValue.appendChild(document.createTextNode(data.msg));
         msgValue.classList.add('msg-content');
@@ -51,6 +51,11 @@ function composeMsg(data){
         msgContainer.appendChild(msgValue);
 
     }else {
+
+        if(userCheck){
+            msgContainer.classList.add('first-container');
+            userCheck = false;
+        }
 
         msgUser.appendChild(document.createTextNode(data.user));
         msgValue.appendChild(document.createTextNode(data.msg));
@@ -62,20 +67,14 @@ function composeMsg(data){
         msgContainer.appendChild(msgValue);
 
     }
-
     return msgContainer;
 }
-
-
-
 
 document.addEventListener('DOMContentLoaded', ()=> {
 
 
     const form = document.querySelector('#message_form');
 
-
-    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 

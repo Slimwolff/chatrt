@@ -24,8 +24,8 @@ $btn-primary: #055aff;
     width: $width;
     height: $height;
 }
-@mixin flex($flow: row wrap, $justify: flex-start, $align: flex-start){
-    display: flex;
+@mixin flex($flow: row wrap, $justify: flex-start, $align: flex-start, $flexD: flex){
+    display: $flexD;
     flex-flow: $flow;
     justify-content: $justify;
     align-items: $align;
@@ -68,6 +68,7 @@ $btn-primary: #055aff;
         }
 
         #messages {
+            @include flex(column nowrap, $flexD:inline-flex);
             position: relative;
             width: 100%;
             max-height: calc(100vh - 120px);
@@ -78,7 +79,7 @@ $btn-primary: #055aff;
             .message-container {
                 @include flex;
                 @include wh(275px,auto);
-                min-height: 50px;
+                min-height: 37px;
                 margin: 0 15px 5px;
                 padding: 7.5px 7.5px;
                 color: #fff;
@@ -95,24 +96,27 @@ $btn-primary: #055aff;
                     @include wh(100%, 15px);
                     font-weight: 500;
                     color: #fff176;
-                    padding-top: 2.5px;
-                    padding-bottom: 1.5px;
+                    // padding-top: 2.5px;
+                    padding-bottom: 2px;
                 }
                 .msg-content {
                     word-break: break-word;
                     padding-top: 3px;
-                    padding-bottom: 5.5px;
+                    // padding-bottom: 5.5px;
                 }
             }
 
-            .own-msg {
-                float: right;
+            .right-msg {
+                align-self: flex-end;
                 color: #000;
                 background: $primary;
             }
             .first-container {
                 margin-top: 10px !important;
-            }   
+            }
+            .first-container-top {
+                margin-top: 16px !important;
+            } 
         }
 
 
