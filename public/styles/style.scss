@@ -47,21 +47,32 @@ $btn-primary: #055aff;
 
     .main-chat-view {
         @include flex(column wrap);
-        @include wh(525px,100%);
+        @include wh(45%,100%);
+        min-width: 395px;
         position: relative;
         top: 0;
         margin-left: 20px;
+    
+        box-sizing: border-box;
         background: $primary;
-
+        
         .info-chat-area {
             @include wh(100%,60px);
             background: $primary;
+
+            form {
+                @include wh;
+                @include flex(row nowrap, flex-start, center);
+
+            }
         }
 
         #messages {
             position: relative;
             width: 100%;
+            max-height: calc(100vh - 120px);
             flex: 1;
+            overflow-y: auto;
             background:  $bg-msg;
 
             .message-container {
@@ -82,6 +93,8 @@ $btn-primary: #055aff;
                 
                 .msg-user {
                     @include wh(100%, 15px);
+                    font-weight: 500;
+                    color: #fff176;
                     padding-top: 2.5px;
                     padding-bottom: 1.5px;
                 }
@@ -94,13 +107,11 @@ $btn-primary: #055aff;
 
             .own-msg {
                 float: right;
-                margin-top: 10px;
-                margin-bottom: 10px;
                 color: #000;
                 background: $primary;
             }
             .first-container {
-                margin-top: 15px !important;
+                margin-top: 10px !important;
             }   
         }
 
@@ -116,33 +127,38 @@ $btn-primary: #055aff;
                 @include wh;
                 @include flex(row nowrap, flex-start, center);
 
-                input[type=text] {
-                    @include wh(auto,35px);
-                    margin: 0 15px;
-                    padding: 7px 7px;
-                    flex: 1 1;
-                    font-size: 14px;
-                    border: 1px solid #b5b5b5;
-                    border-radius: 4.5px;
-                    box-sizing: border-box;
-                    background-color: $secondary;
-                }
-
-                button {
-                    // @include fixPos(relative, none, none, 0, none);
-                    position: relative;
-                    @include wh(50px, 35px);
-                    margin-right: 15px;
-                    font-weight: 500;
-                    border: none;
-                    border-radius: 4.5px;
-                    color: #fff;
-                    background: $btn-primary;
-                    cursor: pointer;
-                }
             }
         }
     }
 
+    .btn-disabled {
+        cursor: not-allowed;
+        background: #9e9e9e;
+    }
+
+    input[type=text] {
+        @include wh(auto,35px);
+        margin: 0 8px 0 15px;
+        padding: 7px 7px;
+        flex: 1 1;
+        font-size: 14px;
+        border: 1px solid #b5b5b5;
+        border-radius: 4.5px;
+        box-sizing: border-box;
+        background-color: $secondary;
+    }
+
+    button {
+        // @include fixPos(relative, none, none, 0, none);
+        position: relative;
+        @include wh(70px, 35px);
+        margin-right: 15px;
+        font-weight: 500;
+        border: none;
+        border-radius: 4.5px;
+        color: #fff;
+        background: $btn-primary;
+        cursor: pointer;
+    }
 
 }

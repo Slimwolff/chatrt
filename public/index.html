@@ -14,20 +14,21 @@
 
     <div id="main">
 
-        <div class="activity-panel">
-        </div>
+        <!-- <div class="activity-panel">
+        </div> -->
     
         <div class="main-chat-view">
             
             
             <div class="info-chat-area">
-                <!-- <form name="user_form_name" id="user_form">
-                    <input type="text" name="user" id="user">
+                <form name="user_form_name" id="user_form">
+                    <input type="text" name="user" id="user" placeholder="Enter your nickname">
                     <button type="submit">Apply</button>
-                </form> -->
+                </form>
             </div>
 
             <div id="messages">
+
                 <ul class="message-container first-container">
                     <li class="msg-user">User</li>
                     <li class="msg-content"> 
@@ -40,15 +41,19 @@
                     <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
                 </ul>
 
-                <ul class="message-container own-msg">
+                <ul class="message-container own-msg first-container">
                     <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
                 </ul>
-            </div>
+                <ul class="message-container own-msg">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+            </div> 
 
             <div class="send-message-area">
                 <form name="message_form_name" id="message_form">
                     <input type="text" name="msg" id="message">
-                    <button type="submit">Send</button>
+                    <button type="submit" class="btn-disabled">Send</button>
                 </form> 
             </div>
         </div>    
@@ -57,10 +62,11 @@
     
 
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
     <script src="chat.js"></script>
     <script>
         
+
     </script>
     
 </body>

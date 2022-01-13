@@ -1,25 +1,81 @@
-const socket = io('http://localhost:3000')
+
+const socket = io(window.location.href);
+
 let user = '';
+let userCheck = false;
+
 socket.on('update_messages', (messages) => {
-    updateMessagesOnScreen(messages)
+
+    
+    updateMessages(messages);
 })
 
 
-function  updateMessagesOnScreen(data){
-    const div_messages = document.querySelector('#messages');
 
-    let list_messages = '<ul>'
-    data.forEach( data => {
-        list_messages += `<li>${data.user}: ${data.msg}</li>`
-    })
-    list_messages += '</ul>'
+function updateMessages(data){
+    let div_message = document.querySelector('#messages');
 
-    div_messages.innerHTML = list_messages;
+    for(let i=div_message.childElementCount; i > 0; i--){
+        div_message.removeChild(div_message.children[0]);
+    }
+
+    data.forEach( contentBodyMSG => {
+        let node = composeMsg(contentBodyMSG);
+        div_message.appendChild(node);
+    });
+
+    if(div_message.childElementCount > 0){
+        div_message.children[0].classList.add('first-container');
+    }
+    
 }
+
+
+
+function composeMsg(data){
+
+    
+    let msgContainer = document.createElement('ul');
+    let msgValue = document.createElement('li');
+    let msgUser = document.createElement('li');
+        msgContainer.classList.add('message-container');
+        
+
+    if(data.user == user) {
+
+        msgContainer.classList.add('own-msg');
+
+        msgValue.appendChild(document.createTextNode(data.msg));
+        msgValue.classList.add('msg-content');
+
+        msgContainer.appendChild(msgValue);
+
+    }else {
+
+        msgUser.appendChild(document.createTextNode(data.user));
+        msgValue.appendChild(document.createTextNode(data.msg));
+
+        msgUser.classList.add('msg-user');
+        msgValue.classList.add('msg-content');
+
+        msgContainer.appendChild(msgUser);
+        msgContainer.appendChild(msgValue);
+
+    }
+
+    return msgContainer;
+}
+
+
+
 
 document.addEventListener('DOMContentLoaded', ()=> {
 
+
     const form = document.querySelector('#message_form');
+
+
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
