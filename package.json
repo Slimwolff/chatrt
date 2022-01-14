@@ -1,7 +1,7 @@
 {
   "name": "chat",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.3",
+  "description": "chat realtime with socketIO.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
