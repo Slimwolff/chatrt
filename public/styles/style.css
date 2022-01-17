@@ -85,7 +85,6 @@
   align-items: flex-start;
   width: 275px;
   height: auto;
-  min-height: 37px;
   margin: 0 15px 5px;
   padding: 7.5px 7.5px;
   color: #fff;
@@ -102,10 +101,6 @@
   font-weight: 500;
   color: #fff176;
   padding-bottom: 2px;
-}
-#main .main-chat-view #messages .message-container .msg-content {
-  word-break: break-word;
-  padding-top: 3px;
 }
 #main .main-chat-view #messages .right-msg {
   align-self: flex-end;

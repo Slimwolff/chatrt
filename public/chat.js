@@ -1,7 +1,7 @@
 
 const socket = io(window.location.href);
 
-let user = 'Tudo446';
+let user = '';
 let userCheck = false;
 
 socket.on('update_messages', (messages) => {
@@ -20,9 +20,9 @@ function updateMessages(data){
     let div_message = document.querySelector('#messages');
 
     
-    // for(let i=div_message.childElementCount; i > 0; i--){
-    //     div_message.removeChild(div_message.children[0]);
-    // }
+    for(let i=div_message.childElementCount; i > 0; i--){
+        div_message.removeChild(div_message.children[0]);
+    }
 
     data.forEach( data => {
         let node = composeMsg(data);

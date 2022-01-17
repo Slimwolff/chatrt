@@ -89,7 +89,6 @@ $btn-primary: #055aff;
             .message-container {
                 @include flex;
                 @include wh(275px,auto);
-                min-height: 37px;
                 margin: 0 15px 5px;
                 padding: 7.5px 7.5px;
                 color: #fff;
@@ -99,21 +98,18 @@ $btn-primary: #055aff;
                 border-radius: 3.5px;
                 box-sizing: border-box;
                 text-rendering: optimizeLegibility;
-
-
                 
                 .msg-user {
                     @include wh(100%, 15px);
                     font-weight: 500;
                     color: #fff176;
-                    // padding-top: 2.5px;
                     padding-bottom: 2px;
                 }
-                .msg-content {
-                    word-break: break-word;
-                    padding-top: 3px;
-                    // padding-bottom: 5.5px;
-                }
+
+                // .msg-content {
+                    
+                // }
+
             }
 
             .right-msg {
@@ -121,12 +117,15 @@ $btn-primary: #055aff;
                 color: #000;
                 background: $primary;
             }
+
             .first-container {
                 margin-top: 10px !important;
             }
+
             .first-container-top {
                 margin-top: 16px !important;
-            } 
+            }
+
         }
 
 
