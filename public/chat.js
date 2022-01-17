@@ -20,14 +20,17 @@ function updateMessages(data){
     let div_message = document.querySelector('#messages');
 
     
-    for(let i=div_message.childElementCount; i > 0; i--){
-        div_message.removeChild(div_message.children[0]);
-    }
+    div_message.innerHTML = '';
+    
 
     data.forEach( data => {
         let node = composeMsg(data);
         div_message.appendChild(node);
     });
+
+    div_message.scrollTop = div_message.scrollHeight+20;
+
+    div_message.scrollTop = div_message.scrollHeight+50;
 
     // add a margin-top on first message
     if(div_message.childElementCount > 0){
@@ -136,8 +139,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
             return;
         }
 
-        const message = document.forms['message_form_name']['msg'].value;
-        document.forms['message_form_name']['msg'].value = '';
+        let msg = e.target.elements.msg.value
+        msg = msg.trim();
+
+       if(!msg){
+           return;
+       }
+
+        const message = msg;
+        e.target.elements.msg.value = ''
         socket.emit('new_message', { user: user, msg: message });
         console.log(message);
     })
