@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Chat</title>
 </head>
@@ -11,20 +14,23 @@
 
     <div id="main">
 
-        <div class="activity-panel">
-        </div>
+        <!-- <div class="activity-panel">
+        </div> -->
     
         <div class="main-chat-view">
             
             
             <div class="info-chat-area">
-                <!-- <form name="user_form_name" id="user_form">
-                    <input type="text" name="user" id="user">
+                <form name="user_form_name" id="user_form">
+                    <input type="text" name="user" id="user" placeholder="Enter your nickname">
                     <button type="submit">Apply</button>
-                </form> -->
+                </form>
+
+                <div id="users-typing"></div>
             </div>
 
             <div id="messages">
+
                 <ul class="message-container first-container">
                     <li class="msg-user">User</li>
                     <li class="msg-content"> 
@@ -37,15 +43,95 @@
                     <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
                 </ul>
 
-                <ul class="message-container own-msg">
+                <ul class="message-container ">
                     <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
                 </ul>
-            </div>
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-user">User</li>
+                    <li class="msg-content"> 
+                        mensagem do userasds
+                        whisper uppercase master overflow mastering
+                        show the most available principially
+                    </li>
+                </ul>
+                <ul class="message-container">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-user">User</li>
+                    <li class="msg-content"> 
+                        mensagem do userasds
+                        whisper uppercase master overflow mastering
+                        show the most available principially
+                    </li>
+                </ul>
+                <ul class="message-container">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-user">User</li>
+                    <li class="msg-content"> 
+                        mensagem do userasds
+                        whisper uppercase master overflow mastering
+                        show the most available principially
+                    </li>
+                </ul>
+                <ul class="message-container">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+                <ul class="message-container ">
+                    <li class="msg-user">User</li>
+                    <li class="msg-content"> 
+                        mensagem do userasds
+                        whisper uppercase master overflow mastering
+                        show the most available principially
+                    </li>
+                </ul>
+                <ul class="message-container">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+
+                <ul class="message-container  ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display</li>
+                </ul>
+                <ul class="message-container ">
+                    <li class="msg-content">Another content in message, for teste the length of messasge on display. Lorem ipsum sit dolor anmet amber querk furvak!!!!!!</li>
+                </ul>
+
+            </div> 
 
             <div class="send-message-area">
                 <form name="message_form_name" id="message_form">
                     <input type="text" name="msg" id="message">
-                    <button type="submit">Send</button>
+                    <button type="submit" class="">Send</button>
                 </form> 
             </div>
         </div>    
@@ -54,10 +140,11 @@
     
 
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
     <script src="chat.js"></script>
     <script>
         
+
     </script>
     
 </body>
